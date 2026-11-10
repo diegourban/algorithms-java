@@ -5,6 +5,8 @@
 
 A small Java library of algorithms and data structures, plus worked problems organised by topic that show them in use.
 
+Sibling repos: [algorithms-go](https://github.com/diegourban/algorithms-go). This repo is the source of truth for the problem catalogue.
+
 ## Build
 
 Requires Java 25. Maven comes with the wrapper.
