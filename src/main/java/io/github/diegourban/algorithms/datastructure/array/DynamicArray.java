@@ -94,8 +94,8 @@ public class DynamicArray<T> {
         if (this.size == 0) {
             throw new ArrayIndexOutOfBoundsException("Index: 0, Size: " + this.size);
         }
-        this.fixedArray[this.size] = null;
         this.size -= 1;
+        this.fixedArray[this.size] = null; // release the removed value so it can be garbage-collected
         if ((double) this.size / this.capacity < 0.25 && this.capacity > INITIAL_CAPACITY) {
             this.resize(this.capacity / 2);
         }

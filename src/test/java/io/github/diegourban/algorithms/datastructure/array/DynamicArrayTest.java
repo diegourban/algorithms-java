@@ -144,4 +144,17 @@ class DynamicArrayTest {
         assertThatExceptionOfType(IndexOutOfBoundsException.class).isThrownBy(array::popBack);
         assertThatExceptionOfType(IndexOutOfBoundsException.class).isThrownBy(() -> array.pop(0));
     }
+
+    @Test
+    void popBackFromAFullArray() {
+        final DynamicArray<Integer> array = new DynamicArray<>();
+        for (int i = 0; i < DynamicArray.INITIAL_CAPACITY; i++) {
+            array.append(i);
+        }
+
+        array.popBack();
+
+        assertThat(array.size()).isEqualTo(DynamicArray.INITIAL_CAPACITY - 1);
+        assertThat(array.get(array.size() - 1)).isEqualTo(DynamicArray.INITIAL_CAPACITY - 2);
+    }
 }
